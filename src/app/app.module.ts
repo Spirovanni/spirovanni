@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {Routes, RouterModule } from '@angular/router';
 
 import { AuthModule } from './@auth/auth/auth.module';
 import { CoreModule } from './@core/core/core.module';
 
 import { AppComponent } from './app.component';
+
+const routes: Routes = [];
 
 @NgModule({
   declarations: [
@@ -13,7 +16,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AuthModule,
-    CoreModule
+    CoreModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
