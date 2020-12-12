@@ -6,6 +6,7 @@ import { AuthModule } from './@auth/auth/auth.module';
 import { CoreModule } from './@core/core/core.module';
 
 import { AppComponent } from './app.component';
+import { ActionListComponent } from './@components/action-list/action-list.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'actions'}
@@ -13,7 +14,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ActionListComponent
   ],
   imports: [
     BrowserModule,
