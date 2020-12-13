@@ -25,6 +25,7 @@ import { CoreModule } from './@core/core/core.module';
 import { AppSettings } from './app.settings';
 import { AppComponent } from './app.component';
 import { ActionListComponent } from './@components/action-list/action-list.component';
+import { PagesComponent } from './pages/pages.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'actions'}
@@ -51,7 +52,8 @@ const routes: Routes = [
   ],
   declarations: [
     AppComponent,
-    ActionListComponent
+    ActionListComponent,
+    PagesComponent
   ],
   exports: [
     RouterModule
