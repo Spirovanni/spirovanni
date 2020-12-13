@@ -17,7 +17,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-import { Routes, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
 import { AuthModule } from './@auth/auth/auth.module';
 import { CoreModule } from './@core/core/core.module';
@@ -27,9 +27,9 @@ import { AppComponent } from './app.component';
 import { ActionListComponent } from './@components/action-list/action-list.component';
 import { PagesComponent } from './pages/pages.component';
 
-const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'actions'}
-];
+// const routes: Routes = [
+//   {path: '', pathMatch: 'full', redirectTo: 'actions'}
+// ];
 
 // noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
@@ -48,7 +48,7 @@ const routes: Routes = [
     }),
     AuthModule,
     CoreModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -56,7 +56,7 @@ const routes: Routes = [
     PagesComponent
   ],
   exports: [
-    RouterModule
+    // RouterModule
   ],
   providers: [
     AppSettings,

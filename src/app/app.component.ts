@@ -3,6 +3,8 @@ import {
   trigger, state, style, animate, transition,
   // ...
 } from '@angular/animations';
+import { AppSettings } from './app.settings';
+import { Settings } from './app.settings.model';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +16,8 @@ import {
   ]
 })
 export class AppComponent {
-
+  public settings: Settings;
+  constructor(public appSettings: AppSettings){
+    this.settings = this.appSettings.settings;
+  }
 }
