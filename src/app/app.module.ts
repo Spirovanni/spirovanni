@@ -29,6 +29,20 @@ import { AppSettings } from './app.settings';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './pages/pages.component';
 import { BlankComponent } from './pages/blank/blank.component';
+import { SearchComponent } from './pages/search/search.component';
+import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
+import { ErrorComponent } from './pages/errors/error/error.component';
+
+import { TopInfoContentComponent } from './@theme/components/top-info-content/top-info-content.component';
+import { SidenavComponent } from './@theme/components/sidenav/sidenav.component';
+import { VerticalMenuComponent } from './@theme/components/menu/vertical-menu/vertical-menu.component';
+import { HorizontalMenuComponent } from './@theme/components/menu/horizontal-menu/horizontal-menu.component';
+import { FlagsMenuComponent } from './@theme/components/flags-menu/flags-menu.component';
+import { FullScreenComponent } from './@theme/components/fullscreen/fullscreen.component';
+import { ApplicationsComponent } from './@theme/components/applications/applications.component';
+import { MessagesComponent } from './@theme/components/messages/messages.component';
+import { UserMenuComponent } from './@theme/components/user-menu/user-menu.component';
+import { FavoritesComponent } from './@theme/components/favorites/favorites.component';
 
 // noinspection AngularInvalidImportedOrDeclaredSymbol
 @NgModule({
@@ -55,7 +69,23 @@ import { BlankComponent } from './pages/blank/blank.component';
     AppComponent,
     ActionListComponent,
     PagesComponent,
-    BlankComponent
+    BlankComponent,
+    SearchComponent,
+    NotFoundComponent,
+    ErrorComponent,
+    TopInfoContentComponent,
+    SidenavComponent,
+    VerticalMenuComponent,
+    HorizontalMenuComponent,
+    FlagsMenuComponent,
+    FullScreenComponent,
+    ApplicationsComponent,
+    MessagesComponent,
+    UserMenuComponent,
+    FavoritesComponent
+  ],
+  entryComponents: [
+    VerticalMenuComponent
   ],
   exports: [
     // RouterModule
