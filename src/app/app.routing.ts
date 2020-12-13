@@ -7,6 +7,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { ErrorComponent } from './pages/errors/error/error.component';
 
+import { ActionsComponent } from './pages/actions/actions.component';
+
 export const routes: Routes = [
   {
     path: '',
@@ -27,7 +29,8 @@ export const routes: Routes = [
             { path: 'profile', loadChildren: () => import ('./pages/profile/profile.module').then(m => m.ProfileModule), data: { breadcrumb: 'Profile' } },
             { path: 'blank', component: BlankComponent, data: { breadcrumb: 'Blank page' } },
             { path: 'search', component: SearchComponent, data: { breadcrumb: 'Search' } },
-            { path: 'search/:name', component: SearchComponent, data: { breadcrumb: 'Search' } }
+            { path: 'search/:name', component: SearchComponent, data: { breadcrumb: 'Search' } },
+            { path: 'actions', component: ActionsComponent, data: { breadcrumb: 'Actions List' } }
       ]
     },
     { path: 'landing', loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule) },
