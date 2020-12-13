@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { CustomOverlayContainer } from './@theme/utils/custom-overlay-container';
@@ -17,8 +17,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
+import { PipesModule } from './@theme/pipes/pipes.module';
 import { AppRoutingModule } from './app.routing';
 
+import { SharedModule } from './@core/shared/shared.module';
 import { AuthModule } from './@auth/auth/auth.module';
 import { CoreModule } from './@core/core/core.module';
 
@@ -35,7 +37,7 @@ import { PagesComponent } from './pages/pages.component';
 @NgModule({
   imports: [
     BrowserModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     // AgmCoreModule.forRoot({
@@ -46,8 +48,10 @@ import { PagesComponent } from './pages/pages.component';
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
+    SharedModule,
     AuthModule,
     CoreModule,
+    PipesModule,
     AppRoutingModule
   ],
   declarations: [
