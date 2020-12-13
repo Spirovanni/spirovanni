@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, ActivatedRouteSnapshot, UrlSegment, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { AppSettings } from '../../app.settings';
-import { Settings } from '../../app.settings.model';
-import { MenuService } from '../../theme/components/menu/menu.service';
+import { AppSettings } from '../../../app.settings';
+import { Settings } from '../../../app.settings.model';
+import { MenuService } from '../../../@theme/components/menu/menu.service';
 
 @Component({
   selector: 'app-breadcrumb',
