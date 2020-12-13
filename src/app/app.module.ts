@@ -32,7 +32,6 @@ import { BlankComponent } from './pages/blank/blank.component';
 import { SearchComponent } from './pages/search/search.component';
 import { NotFoundComponent } from './pages/errors/not-found/not-found.component';
 import { ErrorComponent } from './pages/errors/error/error.component';
-import { ActionsComponent } from './pages/actions/actions.component';
 
 import { TopInfoContentComponent } from './@theme/components/top-info-content/top-info-content.component';
 import { SidenavComponent } from './@theme/components/sidenav/sidenav.component';
@@ -83,8 +82,7 @@ import { FavoritesComponent } from './@theme/components/favorites/favorites.comp
     ApplicationsComponent,
     MessagesComponent,
     UserMenuComponent,
-    FavoritesComponent,
-    ActionsComponent
+    FavoritesComponent
   ],
   entryComponents: [
     VerticalMenuComponent
