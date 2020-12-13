@@ -20,4 +20,7 @@ export class AppComponent {
   constructor(public appSettings: AppSettings){
     this.settings = this.appSettings.settings;
   }
+
+  // tslint:disable-next-line:typedef use-lifecycle-interface
+  ngOnInit() { }
 }
