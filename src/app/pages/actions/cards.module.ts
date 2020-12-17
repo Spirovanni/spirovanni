@@ -37,4 +37,4 @@ export const routes = [
     TablesService
   ]
 })
-export class ActionsModule { }
+export class CardsModule { }

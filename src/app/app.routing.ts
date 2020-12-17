@@ -14,7 +14,7 @@ export const routes: Routes = [
     path: '',
     component: PagesComponent, children: [
             { path: '', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), data: { breadcrumb: 'Dashboard' } },
-            { path: 'actions', loadChildren: () => import('./pages/actions/actions.module').then(m => m.ActionsModule), data: { breadcrumb: 'Actions' } },
+            { path: 'actions', loadChildren: () => import('./pages/actions/cards.module').then(m => m.CardsModule), data: { breadcrumb: 'Actions' } },
             { path: 'users', loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule), data: { breadcrumb: 'Users' } },
             { path: 'dynamic-menu', loadChildren: () => import('./pages/dynamic-menu/dynamic-menu.module').then(m => m.DynamicMenuModule), data: { breadcrumb: 'Dynamic Menu' }  },
             { path: 'ui', loadChildren: () => import('./pages/ui/ui.module').then(m => m.UiModule), data: { breadcrumb: 'UI' } },
