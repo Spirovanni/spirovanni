@@ -7,19 +7,19 @@ import { TablesService } from './../tables/tables.service';
 import { SharedModule } from '../../@core/shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { ActionsComponent } from './actions.component';
+import { CardsComponent } from './cards.component';
 import { ActionListComponent } from './action-list/action-list.component';
 import { ActionFormComponent } from './action-form/action-form.component';
 import { ActionDetailsComponent } from './action-details/action-details.component';
 
 
 export const routes = [
-  { path: '', component: ActionsComponent, pathMatch: 'full' }
+  { path: '', component: CardsComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [
-    ActionsComponent,
+    CardsComponent,
     ActionListComponent,
     ActionFormComponent,
     ActionDetailsComponent
