@@ -9,7 +9,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { CardsComponent } from './cards.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
-import { ActionFormComponent } from './cards-form/action-form.component';
+import { CardsFormComponent } from './cards-form/cards-form.component';
 import { ActionDetailsComponent } from './cards-details/action-details.component';
 
 
@@ -21,7 +21,7 @@ export const routes = [
   declarations: [
     CardsComponent,
     CardsListComponent,
-    ActionFormComponent,
+    CardsFormComponent,
     ActionDetailsComponent
   ],
   imports: [
