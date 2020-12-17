@@ -10,7 +10,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { CardsComponent } from './cards.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsFormComponent } from './cards-form/cards-form.component';
-import { ActionDetailsComponent } from './cards-details/action-details.component';
+import { CardDetailsComponent } from './cards-details/card-details.component';
 
 
 export const routes = [
@@ -22,7 +22,7 @@ export const routes = [
     CardsComponent,
     CardsListComponent,
     CardsFormComponent,
-    ActionDetailsComponent
+    CardDetailsComponent
   ],
   imports: [
     CommonModule,
