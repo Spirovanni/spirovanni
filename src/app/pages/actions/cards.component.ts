@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-actions',
-  templateUrl: './actions.component.html',
-  styleUrls: ['./actions.component.scss']
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
 
