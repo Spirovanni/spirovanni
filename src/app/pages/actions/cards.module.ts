@@ -8,9 +8,9 @@ import { SharedModule } from '../../@core/shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { CardsComponent } from './cards.component';
-import { ActionListComponent } from './cards-list/action-list.component';
-import { ActionFormComponent } from './action-form/action-form.component';
-import { ActionDetailsComponent } from './action-details/action-details.component';
+import { CardsListComponent } from './cards-list/cards-list.component';
+import { ActionFormComponent } from './cards-form/action-form.component';
+import { ActionDetailsComponent } from './cards-details/action-details.component';
 
 
 export const routes = [
@@ -20,7 +20,7 @@ export const routes = [
 @NgModule({
   declarations: [
     CardsComponent,
-    ActionListComponent,
+    CardsListComponent,
     ActionFormComponent,
     ActionDetailsComponent
   ],

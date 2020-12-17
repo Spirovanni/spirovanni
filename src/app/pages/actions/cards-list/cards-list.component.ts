@@ -9,7 +9,7 @@ import { TablesService, Element } from '../../tables/tables.service';
   templateUrl: './action-list.component.html',
   styleUrls: ['./action-list.component.scss']
 })
-export class ActionListComponent {
+export class CardsListComponent {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
