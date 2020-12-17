@@ -6,8 +6,8 @@ import { TablesService, Element } from '../../tables/tables.service';
 
 @Component({
   selector: 'app-action-list',
-  templateUrl: './action-list.component.html',
-  styleUrls: ['./action-list.component.scss']
+  templateUrl: './cards-list.component.html',
+  styleUrls: ['./cards-list.component.scss']
 })
 export class CardsListComponent {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
