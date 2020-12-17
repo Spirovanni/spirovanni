@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { TablesService } from '../tables/tables.service';
 import { SharedModule } from '../../@core/shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -12,6 +11,8 @@ import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsFormComponent } from './cards-form/cards-form.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 
+import { TablesService } from '../tables/tables.service';
+import { ApiService } from '../../@core/services/api.service'
 
 export const routes = [
   { path: '', component: CardsComponent, pathMatch: 'full' }
@@ -34,7 +35,8 @@ export const routes = [
     PerfectScrollbarModule
   ],
   providers: [
-    TablesService
+    TablesService,
+    ApiService
   ]
 })
 export class CardsModule { }
