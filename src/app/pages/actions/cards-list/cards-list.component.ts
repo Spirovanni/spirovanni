@@ -14,7 +14,11 @@ export class CardsListComponent {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
-  constructor(public appSettings: AppSettings, private tablesService: TablesService) {
+  constructor(
+    public appSettings: AppSettings,
+    private tablesService: TablesService,
+    private apiService: ApiService
+  ) {
     this.settings = this.appSettings.settings;
     this.dataSource = new MatTableDataSource<Element>(this.tablesService.getData());
   }
