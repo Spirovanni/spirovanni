@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
 import { TablesService, Element } from '../../tables/tables.service';
+import { ApiService } from '../../../@core/services/api.service';
 
 @Component({
   selector: 'app-action-list',
