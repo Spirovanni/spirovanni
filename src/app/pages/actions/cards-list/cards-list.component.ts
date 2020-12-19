@@ -14,6 +14,7 @@ export class CardsListComponent {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
+  cards = [];
   constructor(
     public appSettings: AppSettings,
     private tablesService: TablesService,

@@ -12,7 +12,7 @@ import { CardsFormComponent } from './cards-form/cards-form.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
 
 import { TablesService } from '../tables/tables.service';
-import { ApiService } from '../../@core/services/api.service'
+import { ApiService } from '../../@core/services/api.service';
 
 export const routes = [
   { path: '', component: CardsComponent, pathMatch: 'full' }
