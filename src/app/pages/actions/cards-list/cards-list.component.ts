@@ -10,7 +10,7 @@ import { ApiService } from '../../../@core/services/api.service';
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss']
 })
-export class CardsListComponent {
+export class CardsListComponent implements OnInit {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
@@ -22,5 +22,9 @@ export class CardsListComponent {
   ) {
     this.settings = this.appSettings.settings;
     this.dataSource = new MatTableDataSource<Element>(this.tablesService.getData());
+  }
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+    this.cards = this.apiService.getCards();
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../@core/services/api.service';
 
 @Component({
   selector: 'app-actions',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
+  cards = [];
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
+    this.cards = this.apiService.getCards();
   }
 
 }
