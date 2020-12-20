@@ -20,6 +20,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { SharedModule } from './@core/shared/shared.module';
 import { PipesModule } from './@theme/pipes/pipes.module';
 import { AppRoutingModule } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './@auth/auth/auth.module';
 import { CoreModule } from './@core/core/core.module';
@@ -48,6 +49,7 @@ import { FavoritesComponent } from './@theme/components/favorites/favorites.comp
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
