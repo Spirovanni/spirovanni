@@ -25,6 +25,11 @@ export class CardsListComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.cards = this.apiService.getCards();
+    this.apiService.getCards().subscribe(
+      data => {
+        this.cards = data;
+      },
+      error => console.log(error)
+    );
   }
 }
