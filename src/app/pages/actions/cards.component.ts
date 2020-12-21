@@ -15,7 +15,7 @@ export class CardsComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.cards = this.apiService.getCards();
+
   }
 
 }

@@ -6,7 +6,7 @@ import { TablesService, Element } from '../../tables/tables.service';
 import { ApiService } from '../../../@core/services/api.service';
 
 @Component({
-  selector: 'app-action-list',
+  selector: 'app-cards-list',
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss']
 })
@@ -27,6 +27,7 @@ export class CardsListComponent implements OnInit {
   ngOnInit() {
     this.apiService.getCards().subscribe(
       data => {
+        // @ts-ignore
         this.cards = data;
       },
       error => console.log(error)

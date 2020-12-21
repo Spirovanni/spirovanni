@@ -111,7 +111,7 @@ export const horizontalMenuItems = [
     new Menu (43, 'Login', '/login', null, 'exit_to_app', null, false, 40),
     new Menu (44, 'Register', '/register', null, 'person_add', null, false, 40),
     new Menu (45, 'Blank', '/blank', null, 'check_box_outline_blank', null, false, 40),
-    new Menu (201, 'Actions List', '/actions', null, 'playlist_add_check', null, false, 40),
+    new Menu (201, 'X Cards', '/xcards', null, 'playlist_add_check', null, false, 40),
     new Menu (46, 'Page Not Found', '/pagenotfound', null, 'error_outline', null, false, 40),
     new Menu (47, 'Error', '/error', null, 'warning', null, false, 40),
     new Menu (48, 'Search', '/search', null, 'search', null, false, 40),

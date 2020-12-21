@@ -15,6 +15,6 @@ export class ApiService {
   ) { }
   // tslint:disable-next-line:typedef
   getCards() {
-    return this.httpClient.get(this.baseUrl);
+    return this.httpClient.get(this.baseUrl, {headers: this.headers});
   }
 }
