@@ -18,19 +18,19 @@ export class CardsListComponent implements OnInit {
   constructor(
     public appSettings: AppSettings,
     private tablesService: TablesService,
-    private apiService: ApiService
+    // private apiService: ApiService
   ) {
     this.settings = this.appSettings.settings;
     this.dataSource = new MatTableDataSource<Element>(this.tablesService.getData());
   }
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.apiService.getCards().subscribe(
-      data => {
-        // @ts-ignore
-        this.cards = data;
-      },
-      error => console.log(error)
-    );
+    // this.apiService.getCards().subscribe(
+    //   data => {
+    //     // @ts-ignore
+    //     this.cards = data;
+    //   },
+    //   error => console.log(error)
+    // );
   }
 }

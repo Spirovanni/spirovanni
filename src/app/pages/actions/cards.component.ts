@@ -8,14 +8,20 @@ import { ApiService } from '../../@core/services/api.service';
 })
 export class CardsComponent implements OnInit {
 
-  cards = [];
+  card: any = [];
   constructor(
     private apiService: ApiService
   ) { }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-
+    this.apiService.getCards().subscribe(
+      data => {
+        // @ts-ignore
+        this.cards = data;
+      },
+      error => console.log(error)
+    );
   }
 
 }
