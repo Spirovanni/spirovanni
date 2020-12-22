@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
@@ -14,6 +14,7 @@ export class CardsListComponent implements OnInit {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
+  @Input()
   cards = [];
   constructor(
     public appSettings: AppSettings,
