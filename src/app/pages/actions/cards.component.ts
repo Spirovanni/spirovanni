@@ -9,6 +9,7 @@ import { ApiService } from '../../@core/services/api.service';
 export class CardsComponent implements OnInit {
 
   cards: any = [];
+  selectedCard = null;
   constructor(
     private apiService: ApiService
   ) { }
