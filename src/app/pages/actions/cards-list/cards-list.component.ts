@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
@@ -32,5 +32,9 @@ export class CardsListComponent implements OnInit {
     //   },
     //   error => console.log(error)
     // );
+  }
+  // tslint:disable-next-line:typedef
+  cardClicked(card) {
+    console.log(card);
   }
 }
