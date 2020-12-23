@@ -24,5 +24,10 @@ export class CardsComponent implements OnInit {
       error => console.log(error)
     );
   }
+  // tslint:disable-next-line:typedef
+  selectCard() {
+    this.selectedCard = card;
+    console.log('selectedCard', this.selectedCard);
+  }
 
 }

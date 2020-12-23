@@ -15,6 +15,7 @@ export class CardsListComponent implements OnInit {
   public dataSource: any;
   public settings: Settings;
   @Input() cards = [];
+  @Output() selectCard = new EventEmitter();
   constructor(
     public appSettings: AppSettings,
     private tablesService: TablesService,
@@ -35,6 +36,6 @@ export class CardsListComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   cardClicked(card) {
-    console.log(card);
+    this.selectCard.emit(card);
   }
 }
