@@ -14,8 +14,7 @@ export class CardsListComponent implements OnInit {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
-  @Input()
-  cards = [];
+  @Input() cards = [];
   constructor(
     public appSettings: AppSettings,
     private tablesService: TablesService,
