@@ -1,6 +1,9 @@
-<h1>
-  {{ card?.title }}
-</h1>
-<p>
-  {{ card?.description }}
-</p>
+<div *ngIf="card">
+  <h1>
+    {{ card.title }}
+  </h1>
+  <p>
+    {{ card.description }}
+  </p>
+</div>
+
