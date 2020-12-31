@@ -8,12 +8,12 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
   <div fxFlex="50" class="p-2">
-          <app-cards-list [cards]="cards" (selectCard)="selectCard($event)"></app-cards-list>
+    <app-cards-list [cards]="cards" (selectCard)="selectCard($event)"></app-cards-list>
   <!--        <app-cards-form></app-cards-form>-->
   </div>
   <div fxFlex="50" class="p-2">
     <!--        <app-cards-form></app-cards-form>-->
-    <app-card-details [card]="selectCard"></app-card-details>
+    <app-card-details [card]="this.selectedCard"></app-card-details>
   </div>
 </div>
 

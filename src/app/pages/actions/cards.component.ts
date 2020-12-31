@@ -28,6 +28,7 @@ export class CardsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   selectCard(card) {
     this.selectedCard = card;
+    // console.log('selectedCard', this.selectedCard);
   }
 
 }
