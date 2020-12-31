@@ -1,4 +1,6 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {AppSettings} from '../../../app.settings';
+import { ApiService } from '../../../@core/services/api.service';
 
 @Component({
   selector: 'app-card-details',
@@ -8,7 +10,10 @@ import { Component, OnInit, Input  } from '@angular/core';
 export class CardDetailsComponent implements OnInit {
 
   @Input() card;
-  constructor() { }
+  constructor(
+    private apiService: ApiService,
+    public appSettings: AppSettings,
+  ) { }
 
   ngOnInit(): void {
   }

@@ -17,6 +17,7 @@ export class CardsListComponent implements OnInit {
   @Input() cards = [];
   @Output() selectCard = new EventEmitter();
   constructor(
+    private apiService: ApiService,
     public appSettings: AppSettings,
     private tablesService: TablesService,
     // private apiService: ApiService
