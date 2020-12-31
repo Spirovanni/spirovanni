@@ -1,8 +1,8 @@
-<div fxLayout="column" class="p-2">
-  <div class="p-2" *ngIf="card">
-    <h1>{{ card.title }}</h1>
-    <p>{{ card.description }}</p>
-
-    {{card.avg_rating}} ({{card.no_of_ratings}})
-  </div>
+<div *ngIf="card">
+  <h1>
+    {{ card.title }}
+  </h1>
+  <p>
+    {{ card.description }}
+  </p>
 </div>
