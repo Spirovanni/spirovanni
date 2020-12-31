@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../@core/services/api.service';
 import { Card } from '../../@core/models/Card';
 
@@ -9,7 +9,7 @@ import { Card } from '../../@core/models/Card';
 })
 export class CardsComponent implements OnInit {
 
-  cards: Card[] = [];
+  cards: any = [];
   selectedCard = null;
   constructor(
     private apiService: ApiService
@@ -26,9 +26,8 @@ export class CardsComponent implements OnInit {
     );
   }
   // tslint:disable-next-line:typedef
-  selectCard(card: Card) {
+  selectCard(card) {
     this.selectedCard = card;
-    this.selectedCard = null;
   }
 
 }

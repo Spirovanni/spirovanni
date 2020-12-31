@@ -6,10 +6,15 @@
     [hasBgImage]="true"
     [class]="'pb-4'"></app-content-header>
 
-<div class="p-2">
-        <app-cards-list [cards]="cards" (selectCard)="selectCard($event)"></app-cards-list>
-<!--        <app-cards-form></app-cards-form>-->
-        <app-card-details></app-card-details>
+<div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
+  <div fxFlex="50" class="p-2">
+          <app-cards-list [cards]="cards" (selectCard)="selectCard($event)"></app-cards-list>
+  <!--        <app-cards-form></app-cards-form>-->
+  </div>
+  <div fxFlex="50" class="p-2">
+    <!--        <app-cards-form></app-cards-form>-->
+    <app-card-details [card]="selectCard"></app-card-details>
+  </div>
 </div>
 
 
