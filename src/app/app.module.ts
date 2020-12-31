@@ -7,6 +7,7 @@ import { CustomOverlayContainer } from './@theme/utils/custom-overlay-container'
 
 // import { AgmCoreModule } from '@agm/core';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { NgxFontAwesomeModule } from 'ngx-font-awesome';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -50,6 +51,7 @@ import { FavoritesComponent } from './@theme/components/favorites/favorites.comp
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxFontAwesomeModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

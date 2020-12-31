@@ -13,6 +13,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
 
 import { TablesService } from '../tables/tables.service';
 import { ApiService } from '../../@core/services/api.service';
+import {NgxFontAwesomeModule} from 'ngx-font-awesome';
 
 export const routes = [
   { path: '', component: CardsComponent, pathMatch: 'full' }
@@ -25,15 +26,16 @@ export const routes = [
     CardsFormComponent,
     CardDetailsComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    NgxDatatableModule,
-    SharedModule,
-    FormsModule,
-    NgxChartsModule,
-    PerfectScrollbarModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        NgxDatatableModule,
+        SharedModule,
+        FormsModule,
+        NgxChartsModule,
+        PerfectScrollbarModule,
+        NgxFontAwesomeModule
+    ],
   providers: [
     TablesService,
     ApiService
