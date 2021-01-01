@@ -13,6 +13,6 @@
   </div>
   <div fxFlex="50" class="p-2">
     <!--        <app-cards-form></app-cards-form>-->
-    <app-card-details [card]="this.selectedCard"></app-card-details>
+    <app-card-details [card]="this.selectedCard" (updateCard)="selectCard($event)"></app-card-details>
   </div>
 </div>

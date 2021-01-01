@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from '../../../@core/services/api.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { ApiService } from '../../../@core/services/api.service';
 export class CardDetailsComponent implements OnInit {
 
   @Input() card;
+  @Output() updateCard = new EventEmitter();
   rateHovered = 0;
   constructor(
     private apiService: ApiService
@@ -18,11 +19,11 @@ export class CardDetailsComponent implements OnInit {
   ngOnInit() {
   }
   // tslint:disable-next-line:typedef
-  rateHover(rate) {
+  rateHover(rate: number) {
     this.rateHovered = rate;
   }
   // tslint:disable-next-line:typedef
-  rateClicked(rate) {
+  rateClicked(rate: number) {
     this.apiService.rateCard(rate, this.card.id).subscribe(
       result => this.getDetails(),
       error => console.log(error)
@@ -32,7 +33,7 @@ export class CardDetailsComponent implements OnInit {
   getDetails() {
     this.apiService.getCard(this.card.id).subscribe(
       card => {
-        console.log(card);
+        this.updateCard.emit(card);
       },
       error => console.log(error)
     );
