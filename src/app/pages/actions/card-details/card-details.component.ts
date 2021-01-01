@@ -17,4 +17,7 @@ export class CardDetailsComponent implements OnInit {
   rateHover(rate) {
     this.rateHovered = rate;
   }
+  rateClicked(rate) {
+    this.rateHovered = rate;
+  }
 }

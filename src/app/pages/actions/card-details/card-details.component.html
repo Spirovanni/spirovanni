@@ -14,7 +14,7 @@
 <div id="rate-container">
   <h2>Rate it!!!</h2>
   <ngx-fa *ngFor="let rate of [1,2,3,4,5]" name="star" (mouseenter)="rateHover(rate)"
-          (mouseleave)="rateHovered = 0"
+          (mouseleave)="rateHovered = 0" (click)="rateClicked(rate)"
           [ngClass]="{'purple': rateHovered >= rate}"
   ></ngx-fa>
 </div>
