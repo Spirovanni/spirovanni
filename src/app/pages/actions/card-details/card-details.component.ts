@@ -8,9 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardDetailsComponent implements OnInit {
 
   @Input() card;
+  rateHovered = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  // tslint:disable-next-line:typedef
+  rateHover(rate) {
+    this.rateHovered = rate;
+  }
 }
