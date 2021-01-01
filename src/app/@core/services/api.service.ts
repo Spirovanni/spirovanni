@@ -21,4 +21,9 @@ export class ApiService {
   getCard() {
     return this.httpClient.get(this.baseUrl, {headers: this.headers});
   }
+  // tslint:disable-next-line:typedef
+  rateCard(rate: number, cardId: number) {
+    const body = JSON.stringify({stars: rate});
+    return this.httpClient.post(`${this.baseUrl}${cardId}/rate_card/`, body, {headers: this.headers});
+  }
 }
