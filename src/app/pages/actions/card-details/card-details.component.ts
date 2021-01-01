@@ -24,8 +24,15 @@ export class CardDetailsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   rateClicked(rate) {
     this.apiService.rateCard(rate, this.card.id).subscribe(
-      result => {
-        console.log(result);
+      result => this.getDetails(),
+      error => console.log(error)
+    );
+  }
+  // tslint:disable-next-line:typedef
+  getDetails() {
+    this.apiService.getCard(this.card.id).subscribe(
+      card => {
+        console.log(card);
       },
       error => console.log(error)
     );

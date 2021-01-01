@@ -18,8 +18,8 @@ export class ApiService {
     return this.httpClient.get(this.baseUrl, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
-  getCard() {
-    return this.httpClient.get(this.baseUrl, {headers: this.headers});
+  getCard(id: number) {
+    return this.httpClient.get(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {
