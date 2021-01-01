@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Card} from '../models/Card';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,11 @@ export class ApiService {
   ) { }
   // tslint:disable-next-line:typedef
   getCards() {
-    return this.httpClient.get(this.baseUrl, {headers: this.headers});
+    return this.httpClient.get<Card[]>(this.baseUrl, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
   getCard(id: number) {
-    return this.httpClient.get(`${this.baseUrl}${id}/`, {headers: this.headers});
+    return this.httpClient.get<Card>(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {

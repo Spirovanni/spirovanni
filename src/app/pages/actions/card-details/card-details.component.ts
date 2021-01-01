@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ApiService } from '../../../@core/services/api.service';
+import { Card } from '../../../@core/models/Card';
 
 @Component({
   selector: 'app-card-details',
@@ -8,8 +9,8 @@ import { ApiService } from '../../../@core/services/api.service';
 })
 export class CardDetailsComponent implements OnInit {
 
-  @Input() card;
-  @Output() updateCard = new EventEmitter();
+  @Input() card: Card;
+  @Output() updateCard = new EventEmitter<Card>();
   rateHovered = 0;
   constructor(
     private apiService: ApiService
@@ -32,7 +33,7 @@ export class CardDetailsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   getDetails() {
     this.apiService.getCard(this.card.id).subscribe(
-      card => {
+      (card: Card) => {
         this.updateCard.emit(card);
       },
       error => console.log(error)
