@@ -2,9 +2,14 @@
   <h1>
     {{ card.title }}
   </h1>
-  <ngx-fa name="cog" [animation]="true" size="lg"></ngx-fa>
+  <ngx-fa name="star" size="sm" [ngClass]="{'orange': card.avg_rating > 0}"> </ngx-fa>
+  <ngx-fa name="star" size="sm" [ngClass]="{'orange': card.avg_rating > 1}"> </ngx-fa>
+  <ngx-fa name="star" size="sm" [ngClass]="{'orange': card.avg_rating > 2}"> </ngx-fa>
+  <ngx-fa name="star" size="sm" [ngClass]="{'orange': card.avg_rating > 3}"> </ngx-fa>
+  <ngx-fa name="star" size="sm" [ngClass]="{'orange': card.avg_rating > 4}"> </ngx-fa>
+  ({{card.no_of_ratings}})
   <p>
     {{ card.description }}
   </p>
-  {{card.avg_rating}} ({{card.no_of_ratings}})
+
 </div>
