@@ -8,8 +8,8 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
   <div fxFlex="50" class="p-2">
-    <app-cards-list [cards]="cards" (selectCard)="selectCard($event)"
-    (editedCard)="editCard($event)"
+    <app-cards-list [cards]="cards" (selectCard)="selectCard($event)" (deletedCard)="deletedCard()"
+    (editedCard)="editCard($event)" (createNewCard)="createNewCard()"
     ></app-cards-list>
   </div>
   <div fxFlex="50" class="p-2">

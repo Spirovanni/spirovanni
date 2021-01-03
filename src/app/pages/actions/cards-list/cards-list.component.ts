@@ -18,6 +18,8 @@ export class CardsListComponent implements OnInit {
   @Input() cards: Card[] = [];
   @Output() selectCard = new EventEmitter<Card>();
   @Output() editedCard = new EventEmitter<Card>();
+  @Output() createNewCard = new EventEmitter();
+  @Output() deletedCard = new EventEmitter<Card>();
   constructor(
     private apiService: ApiService,
     public appSettings: AppSettings,
@@ -44,5 +46,13 @@ export class CardsListComponent implements OnInit {
   // tslint:disable-next-line:typedef
   editCard(card: Card) {
     this.editedCard.emit(card);
+  }
+  // tslint:disable-next-line:typedef
+  newCard() {
+    this.createNewCard.emit();
+  }
+  // tslint:disable-next-line:typedef
+  deleteCard(card: Card) {
+    this.deletedCard.emit(card);
   }
 }

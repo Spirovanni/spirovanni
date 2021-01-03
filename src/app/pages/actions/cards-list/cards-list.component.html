@@ -2,12 +2,12 @@
   <div class="p-2 card-item">
     <h2 (click)="cardClicked(card)">{{card.title}}</h2>
     <ngx-fa name="edit" size="lg" (click)="editCard(card)"></ngx-fa>
-    <ngx-fa name="trash" size="lg" ></ngx-fa>
+    <ngx-fa name="trash" size="lg" (click)="deleteCard(card)"></ngx-fa>
 <!--    <h3>{{card.title}}</h3>-->
   </div>
 </div>
 <a mat-raised-button color="primary" href="https://black-shields.com" target="_blank">
-  <mat-icon class="mx-2">note_add</mat-icon>New Card
+  <mat-icon class="mx-2" (click)="newCard()">note_add</mat-icon>New Card
 </a>
 
 <!--<div *ngFor="let movie of movies"  class="movie-item">-->

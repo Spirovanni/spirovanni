@@ -37,7 +37,18 @@ export class CardsComponent implements OnInit {
   editCard(card: Card) {
     this.editedCard = card;
     this.selectedCard = null;
-    // console.log('selectedCard', this.selectedCard);
+  }
+
+  // tslint:disable-next-line:typedef
+  createNewCard() {
+    this.editedCard = {title: '', description: ''};
+    this.selectedCard = null;
+  }
+
+  // tslint:disable-next-line:typedef
+  deletedCard(card: Card) {
+    // TODO remove movie with API
+    console.log('delete', card.title);
   }
 
 }
