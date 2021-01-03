@@ -29,12 +29,14 @@ export class CardsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   selectCard(card: Card) {
     this.selectedCard = card;
+    this.editedCard = null;
     // console.log('selectedCard', this.selectedCard);
   }
 
   // tslint:disable-next-line:typedef
   editCard(card: Card) {
     this.editedCard = card;
+    this.selectedCard = null;
     // console.log('selectedCard', this.selectedCard);
   }
 
