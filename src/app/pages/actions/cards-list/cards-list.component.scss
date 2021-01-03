@@ -2,3 +2,13 @@
   display: grid;
   grid-template-columns: 1fr auto auto;
 }
+
+.card-item ngx-fa {
+  font-size: 1.5em;
+  margin: 15px 5px;
+  cursor: pointer;
+}
+
+ngx-fa[name='trash'] {
+  color: #D81B60;
+}

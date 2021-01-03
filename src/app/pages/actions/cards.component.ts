@@ -11,6 +11,7 @@ export class CardsComponent implements OnInit {
 
   cards: Card[] = [];
   selectedCard = null;
+  EditCard = null;
   constructor(
     private apiService: ApiService
   ) { }

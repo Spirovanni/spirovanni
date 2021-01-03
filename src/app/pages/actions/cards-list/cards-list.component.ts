@@ -4,6 +4,7 @@ import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
 import { TablesService, Element } from '../../tables/tables.service';
 import { ApiService } from '../../../@core/services/api.service';
+import { Card } from '../../../@core/models/Card';
 
 @Component({
   selector: 'app-cards-list',
@@ -14,8 +15,9 @@ export class CardsListComponent implements OnInit {
   public displayedColumns = ['position', 'name', 'weight', 'symbol'];
   public dataSource: any;
   public settings: Settings;
-  @Input() cards = [];
-  @Output() selectCard = new EventEmitter();
+  @Input() cards: Card[] = [];
+  @Output() selectCard = new EventEmitter<Card>();
+  @Output() editedCard = new EventEmitter<Card>();
   constructor(
     private apiService: ApiService,
     public appSettings: AppSettings,
@@ -36,7 +38,11 @@ export class CardsListComponent implements OnInit {
     // );
   }
   // tslint:disable-next-line:typedef
-  cardClicked(card) {
+  cardClicked(card: Card) {
+    this.selectCard.emit(card);
+  }
+  // tslint:disable-next-line:typedef
+  editCard(card: Card) {
     this.selectCard.emit(card);
   }
 }
