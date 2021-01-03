@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ApiService} from '../../../@core/services/api.service';
 import { Card } from '../../../@core/models/Card';
 
@@ -9,6 +9,7 @@ import { Card } from '../../../@core/models/Card';
 })
 export class CardsFormComponent implements OnInit {
 
+  @Input() card: Card;
   constructor(
     private apiService: ApiService
   ) { }
