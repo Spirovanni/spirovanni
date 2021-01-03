@@ -43,6 +43,6 @@ export class CardsListComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   editCard(card: Card) {
-    this.selectCard.emit(card);
+    this.editedCard.emit(card);
   }
 }

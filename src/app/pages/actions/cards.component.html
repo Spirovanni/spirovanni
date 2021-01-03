@@ -19,7 +19,7 @@
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center" class="p-2">
   <div fxFlex="80" class="p-2">
-  <app-card-form *ngIf="editCard"></app-card-form>
+  <app-card-form *ngIf="editedCard" [card]="this.editedCard"></app-card-form>
   </div>
 </div>
 
