@@ -11,7 +11,7 @@ export class CardsComponent implements OnInit {
 
   cards: Card[] = [];
   selectedCard = null;
-  EditCard = null;
+  editedCard = null;
   constructor(
     private apiService: ApiService
   ) { }
@@ -29,6 +29,12 @@ export class CardsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   selectCard(card: Card) {
     this.selectedCard = card;
+    // console.log('selectedCard', this.selectedCard);
+  }
+
+  // tslint:disable-next-line:typedef
+  editCard(card: Card) {
+    this.editedCard = card;
     // console.log('selectedCard', this.selectedCard);
   }
 
