@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import {ApiService} from '../../../@core/services/api.service';
 import { Card } from '../../../@core/models/Card';
 
