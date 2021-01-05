@@ -10,6 +10,7 @@ import { CardsComponent } from './cards.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsFormComponent } from './cards-form/cards-form.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
+import { ReactiveFormsModule  } from '@angular/forms';
 
 import { TablesService } from '../tables/tables.service';
 import { ApiService } from '../../@core/services/api.service';
@@ -27,14 +28,15 @@ export const routes = [
     CardDetailsComponent
   ],
     imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        NgxDatatableModule,
-        SharedModule,
-        FormsModule,
-        NgxChartsModule,
-        PerfectScrollbarModule,
-        NgxFontAwesomeModule
+      CommonModule,
+      RouterModule.forChild(routes),
+      NgxDatatableModule,
+      SharedModule,
+      ReactiveFormsModule,
+      FormsModule,
+      NgxChartsModule,
+      PerfectScrollbarModule,
+      NgxFontAwesomeModule
     ],
   providers: [
     TablesService,
