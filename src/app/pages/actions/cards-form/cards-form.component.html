@@ -1,4 +1,4 @@
-<div fxLayout="column" class="p-2">
+<div fxLayout="column" class="p-2" [formGroup]="cardForm" (submit)="saveForm()">
   <div class="p-2">
     <mat-card>
       <mat-card-header fxLayoutAlign="center">
@@ -7,13 +7,13 @@
       <mat-card-content>
         <form fxLayout="column" fxLayoutAlign="center">
           <mat-form-field>
-            <input matInput placeholder="Title" value="Get up early">
+            <input matInput placeholder="Title" value="Get up early" formControlName="title">
           </mat-form-field>
           <mat-form-field>
-            <textarea matInput placeholder="Description" value="Start your day at 5am everyday!"></textarea>
+            <textarea matInput placeholder="Description" value="Start your day at 5am everyday!" formControlName="description"></textarea>
           </mat-form-field>
           <a mat-raised-button color="primary">
-            <mat-icon class="mx-2" >playlist_add_check</mat-icon>Save
+            <mat-icon class="mx-2" type="submit">playlist_add_check</mat-icon>Save
           </a>
         </form>
       </mat-card-content>
