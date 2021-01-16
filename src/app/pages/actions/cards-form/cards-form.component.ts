@@ -12,11 +12,13 @@ import { Card } from '../../../@core/models/Card';
 export class CardsFormComponent implements OnInit {
 
   cardForm;
-  @Input() card: Card;
-  cardForm = new FormGroup({
-  title: new FormControl(''),
-  description: new FormControl('')
-});
+  @Input() set card(val: Card) {
+    this.cardForm = new FormGroup({
+      title: new FormControl(val.title),
+      description: new FormControl(val.description)
+    });
+  }
+
   constructor(
     private apiService: ApiService
   ) { }
