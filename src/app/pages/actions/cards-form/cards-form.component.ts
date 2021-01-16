@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
-import {ApiService} from '../../../@core/services/api.service';
+import { ApiService } from '../../../@core/services/api.service';
 import { Card } from '../../../@core/models/Card';
 
 
@@ -22,6 +22,7 @@ export class CardsFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // tslint:disable-next-line:typedef
   saveForm() {
     console.log(this.cardForm.value);
   }

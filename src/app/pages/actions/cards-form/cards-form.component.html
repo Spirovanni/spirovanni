@@ -1,22 +1,19 @@
-<div fxLayout="column" class="p-2" [formGroup]="cardForm" (ngSubmit)="saveForm()">
+<div fxLayout="column" class="p-2" >
   <div class="p-2">
     <mat-card>
       <mat-card-header fxLayoutAlign="center">
         <mat-card-subtitle><h2>New Card Form</h2></mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content>
-        <form fxLayout="column" fxLayoutAlign="center">
-          <mat-form-field>
-            <input matInput placeholder="Title" value="Get up early" formControlName="title">
-          </mat-form-field>
-          <mat-form-field>
-            <textarea matInput placeholder="Description" value="Start your day at 5am everyday!" formControlName="description"></textarea>
-          </mat-form-field>
-          <a mat-raised-button color="primary">
-            <mat-icon class="mx-2" type="submit">backup</mat-icon>Save
-          </a>
+<!--      <mat-card-content >-->
+        <form fxLayout="column" fxLayoutAlign="center" [formGroup]="cardForm" (ngSubmit)="saveForm()">
+          <label>Title</label><br>
+          <input matInput type="text" formControlName="title"><br>
+          <label>Description</label><br>
+          <textarea matInput type="text" formControlName="description"></textarea>
+          <button mat-raised-button color="primary" class="mx-2" type="submit"><mat-icon class="mx-2">note_add</mat-icon>Save</button>
+
         </form>
-      </mat-card-content>
+<!--      </mat-card-content>-->
     </mat-card>
   </div>
 </div>

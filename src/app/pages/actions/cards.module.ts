@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { SharedModule } from '../../@core/shared/shared.module';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -10,11 +10,10 @@ import { CardsComponent } from './cards.component';
 import { CardsListComponent } from './cards-list/cards-list.component';
 import { CardsFormComponent } from './cards-form/cards-form.component';
 import { CardDetailsComponent } from './card-details/card-details.component';
-import { ReactiveFormsModule  } from '@angular/forms';
 
 import { TablesService } from '../tables/tables.service';
 import { ApiService } from '../../@core/services/api.service';
-import {NgxFontAwesomeModule} from 'ngx-font-awesome';
+import { NgxFontAwesomeModule } from 'ngx-font-awesome';
 
 export const routes = [
   { path: '', component: CardsComponent, pathMatch: 'full' }
