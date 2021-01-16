@@ -11,6 +11,7 @@ import { Card } from '../../../@core/models/Card';
 })
 export class CardsFormComponent implements OnInit {
 
+  cardForm;
   @Input() card: Card;
   cardForm = new FormGroup({
   title: new FormControl(''),
