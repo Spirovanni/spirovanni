@@ -61,4 +61,11 @@ export class CardsComponent implements OnInit {
   cardCreated(card: Card) {
     this.cards.push(card);
   }
+  // tslint:disable-next-line:typedef
+  cardUpdated(card: Card) {
+    const indx = this.cards.findIndex( car => car.id === card.id );
+    if (indx >= 0) {
+      this.cards[indx] = card;
+    }
+  }
 }

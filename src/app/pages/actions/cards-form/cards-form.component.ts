@@ -34,7 +34,7 @@ export class CardsFormComponent implements OnInit {
     if (this.id) {
       this.apiService.updateCard(this.id,
         this.cardForm.value.title, this.cardForm.value.description).subscribe(
-        result => console.log(result),
+        (result: Card) => this.cardUpdated.emit(result),
         error => console.log(error)
       );
     } else {
