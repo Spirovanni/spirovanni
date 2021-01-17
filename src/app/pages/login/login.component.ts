@@ -5,7 +5,11 @@ import { emailValidator } from '../../@theme/utils/app-validators';
 import { AppSettings } from '../../app.settings';
 import { Settings } from '../../app.settings.model';
 import { ApiService } from '../../@core/services/api.service';
+import { CookieService } from 'ngx-cookie-service';
 
+interface TokenObj {
+  token: string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html'
@@ -19,6 +23,7 @@ export class LoginComponent {
   });
   constructor(
     private apiService: ApiService,
+    private cookieService: CookieService,
     public appSettings: AppSettings,
     public fb: FormBuilder,
     public router: Router
@@ -33,7 +38,10 @@ export class LoginComponent {
 
   saveForm() {
     this.apiService.loginUser(this.authForm.value).subscribe(
-      result => console.log(result),
+      (result: TokenObj) => {
+        console.log(result);
+        this.cookieService.set('cr-token', result.token);
+      },
         error => console.log(error)
     );
   }
