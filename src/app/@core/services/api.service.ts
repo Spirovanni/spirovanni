@@ -10,7 +10,7 @@ export class ApiService {
   baseCardUrl = `${this.baseUrl}api/cards/`;
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'Token 069bbc38f30919f10c0635ac26d795db437bd4ad'
+    // Authorization: 'Token 069bbc38f30919f10c0635ac26d795db437bd4ad'
   });
   constructor(
     private httpClient: HttpClient
@@ -37,7 +37,7 @@ export class ApiService {
     return this.httpClient.post(`${this.baseCardUrl}${cardId}/rate_card/`, body, {headers: this.headers});
   }
   loginUser(authData) {
-    const body = JSON.stringify({authData});
-    return this.httpClient.put(`${this.baseUrl}auth/`, body, {headers: this.headers});
+    const body = JSON.stringify(authData);
+    return this.httpClient.post(`${this.baseUrl}auth/`, body, {headers: this.headers});
   }
 }

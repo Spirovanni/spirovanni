@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { emailValidator } from '../../@theme/utils/app-validators';
 import { AppSettings } from '../../app.settings';
 import { Settings } from '../../app.settings.model';
+import { ApiService } from '../../@core/services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,12 @@ export class LoginComponent {
     username: new FormControl(''),
     password: new FormControl('')
   });
-  constructor(public appSettings: AppSettings, public fb: FormBuilder, public router: Router){
+  constructor(
+    private apiService: ApiService,
+    public appSettings: AppSettings,
+    public fb: FormBuilder,
+    public router: Router
+  ){
     this.settings = this.appSettings.settings;
     this.form = this.fb.group({
       username: [null, Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -26,7 +32,10 @@ export class LoginComponent {
   }
 
   saveForm() {
-    console.log(this.authForm.value);
+    this.apiService.loginUser(this.authForm.value).subscribe(
+      result => console.log(result),
+        error => console.log(error)
+    );
   }
 
   // tslint:disable-next-line:ban-types
