@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import { ApiService } from '../../../@core/services/api.service';
 import { Card } from '../../../@core/models/Card';
@@ -13,6 +13,8 @@ export class CardsFormComponent implements OnInit {
 
   cardForm;
   id = null;
+  @Output() cardCreated = new EventEmitter<Card>();
+  @Output() cardUpdated = new EventEmitter<Card>();
   @Input() set card(val: Card) {
     this.id = val.id;
     this.cardForm = new FormGroup({
@@ -38,7 +40,7 @@ export class CardsFormComponent implements OnInit {
     } else {
       this.apiService.createCard(
         this.cardForm.value.title, this.cardForm.value.description).subscribe(
-        result => console.log(result),
+        (result: Card) => this.cardCreated.emit(result),
         error => console.log(error)
       );
     }

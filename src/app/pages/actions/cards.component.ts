@@ -57,4 +57,8 @@ export class CardsComponent implements OnInit {
       error => console.log(error)
     );
   }
+  // tslint:disable-next-line:typedef
+  cardCreated(card: Card) {
+    this.cards.push(card);
+  }
 }
