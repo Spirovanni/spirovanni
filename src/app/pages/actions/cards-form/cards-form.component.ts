@@ -28,6 +28,11 @@ export class CardsFormComponent implements OnInit {
   // tslint:disable-next-line:typedef
   saveForm() {
     console.log(this.cardForm.value);
+    this.apiService.createCard(
+      this.cardForm.value.title, this.cardForm.value.description).subscribe(
+        result => console.log(result),
+      error => console.log(error)
+    );
   }
 
 }
