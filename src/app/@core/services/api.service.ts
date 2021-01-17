@@ -23,6 +23,11 @@ export class ApiService {
     return this.httpClient.get<Card>(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
+  createCard(title: string, description: string) {
+    const body = JSON.stringify({title, description});
+    return this.httpClient.post(`${this.baseUrl}/`, {headers: this.headers});
+  }
+  // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {
     const body = JSON.stringify({stars: rate});
     return this.httpClient.post(`${this.baseUrl}${cardId}/rate_card/`, body, {headers: this.headers});
