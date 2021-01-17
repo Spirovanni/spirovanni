@@ -52,7 +52,7 @@ export class CardsComponent implements OnInit {
   deletedCard(card: Card) {
     this.apiService.deleteCard(card.id).subscribe(
       data => {
-        console.log(data);
+        this.cards = this.cards.filter(car => car.id !== card.id);
       },
       error => console.log(error)
     );
