@@ -30,7 +30,7 @@ export class ApiService {
   // tslint:disable-next-line:typedef
   updateCard(id, title: string, description: string) {
     const body = JSON.stringify({title, description});
-    return this.httpClient.put(`${this.baseUrl}${id}`, body, {headers: this.headers});
+    return this.httpClient.put(`${this.baseUrl}${id}/`, body, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {
