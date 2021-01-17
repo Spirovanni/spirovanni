@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { emailValidator } from '../../@theme/utils/app-validators';
 import { AppSettings } from '../../app.settings';
 import { Settings } from '../../app.settings.model';
@@ -12,13 +12,21 @@ import { Settings } from '../../app.settings.model';
 export class LoginComponent {
   public form: FormGroup;
   public settings: Settings;
+  authForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  });
   constructor(public appSettings: AppSettings, public fb: FormBuilder, public router: Router){
     this.settings = this.appSettings.settings;
     this.form = this.fb.group({
-      email: [null, Validators.compose([Validators.required, emailValidator])],
+      username: [null, Validators.compose([Validators.required, Validators.minLength(4)])],
       password: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
       rememberMe: false
     });
+  }
+
+  saveForm() {
+    console.log(this.authForm.value);
   }
 
   // tslint:disable-next-line:ban-types

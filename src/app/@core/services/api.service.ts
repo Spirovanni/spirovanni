@@ -14,31 +14,28 @@ export class ApiService {
   constructor(
     private httpClient: HttpClient
   ) { }
-  // tslint:disable-next-line:typedef
   getCards() {
     return this.httpClient.get<Card[]>(this.baseUrl, {headers: this.headers});
   }
-  // tslint:disable-next-line:typedef
   getCard(id: number) {
     return this.httpClient.get<Card>(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
-  // tslint:disable-next-line:typedef
   createCard(title: string, description: string) {
     const body = JSON.stringify({title, description});
     return this.httpClient.post(`${this.baseUrl}`, body, {headers: this.headers});
   }
-  // tslint:disable-next-line:typedef
   updateCard(id: number, title: string, description: string) {
     const body = JSON.stringify({title, description});
     return this.httpClient.put(`${this.baseUrl}${id}/`, body, {headers: this.headers});
   }
-  // tslint:disable-next-line:typedef
   deleteCard(id: number) {
     return this.httpClient.delete(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
-  // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {
     const body = JSON.stringify({stars: rate});
     return this.httpClient.post(`${this.baseUrl}${cardId}/rate_card/`, body, {headers: this.headers});
+  }
+  loginUser(authData) {
+
   }
 }

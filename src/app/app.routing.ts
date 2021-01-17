@@ -11,7 +11,7 @@ import { CardsComponent } from './pages/actions/cards.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'pages',
     component: PagesComponent, children: [
             { path: '', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule), data: { breadcrumb: 'Dashboard' } },
             { path: 'xcards', loadChildren: () => import('./pages/actions/cards.module').then(m => m.CardsModule), data: { breadcrumb: 'Cards' } },
@@ -34,6 +34,7 @@ export const routes: Routes = [
             // { path: 'actions', component: CardsComponent, data: { breadcrumb: 'Actions List' } }
       ]
     },
+    { path: '', pathMatch: 'full', redirectTo: 'login'},
     { path: 'landing', loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule) },
     { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
     { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
