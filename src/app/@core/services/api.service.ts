@@ -28,9 +28,13 @@ export class ApiService {
     return this.httpClient.post(`${this.baseUrl}`, body, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
-  updateCard(id, title: string, description: string) {
+  updateCard(id: number, title: string, description: string) {
     const body = JSON.stringify({title, description});
     return this.httpClient.put(`${this.baseUrl}${id}/`, body, {headers: this.headers});
+  }
+  // tslint:disable-next-line:typedef
+  deleteCard(id: number) {
+    return this.httpClient.delete(`${this.baseUrl}${id}/`, {headers: this.headers});
   }
   // tslint:disable-next-line:typedef
   rateCard(rate: number, cardId: number) {

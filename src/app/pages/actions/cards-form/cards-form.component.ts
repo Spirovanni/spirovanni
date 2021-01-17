@@ -15,7 +15,6 @@ export class CardsFormComponent implements OnInit {
   id = null;
   @Input() set card(val: Card) {
     this.id = val.id;
-    console.log(this.id);
     this.cardForm = new FormGroup({
       title: new FormControl(val.title),
       description: new FormControl(val.description)

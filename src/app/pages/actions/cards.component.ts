@@ -12,9 +12,11 @@ export class CardsComponent implements OnInit {
   cards: Card[] = [];
   selectedCard = null;
   editedCard = null;
+
   constructor(
     private apiService: ApiService
-  ) { }
+  ) {
+  }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
@@ -26,6 +28,7 @@ export class CardsComponent implements OnInit {
       error => console.log(error)
     );
   }
+
   // tslint:disable-next-line:typedef
   selectCard(card: Card) {
     this.selectedCard = card;
@@ -47,8 +50,11 @@ export class CardsComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   deletedCard(card: Card) {
-    // TODO remove movie with API
-    console.log('delete', card.title);
+    this.apiService.deleteCard(card.id).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => console.log(error)
+    );
   }
-
 }
