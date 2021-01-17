@@ -7,10 +7,14 @@
 <!--      <mat-card-content >-->
         <form fxLayout="column" fxLayoutAlign="center" [formGroup]="cardForm" (ngSubmit)="saveForm()">
           <label>Title</label><br>
-          <input matInput type="text" formControlName="title"><br>
+          <mat-form-field>
+            <input matInput type="text" formControlName="title"><br>
+          </mat-form-field>
           <label>Description</label><br>
-          <textarea matInput type="text" formControlName="description"></textarea>
-          <button mat-raised-button color="primary" class="mx-2" type="submit"><mat-icon class="mx-2">note_add</mat-icon>
+          <mat-form-field>
+            <textarea matInput type="text" formControlName="description"></textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary" class="mx-2" type="submit" [disabled]="formDisabled()"><mat-icon class="mx-2">note_add</mat-icon>
             <span *ngIf="id">Update</span>
             <span *ngIf="!id">Create</span>
           </button>

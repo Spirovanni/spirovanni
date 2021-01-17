@@ -30,6 +30,15 @@ export class CardsFormComponent implements OnInit {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
+  formDisabled() {
+    if (this.cardForm.value.title.length &&
+    this.cardForm.value.description.length) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  // tslint:disable-next-line:typedef
   saveForm() {
     if (this.id) {
       this.apiService.updateCard(this.id,

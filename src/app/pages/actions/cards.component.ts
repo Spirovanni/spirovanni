@@ -60,6 +60,7 @@ export class CardsComponent implements OnInit {
   // tslint:disable-next-line:typedef
   cardCreated(card: Card) {
     this.cards.push(card);
+    this.editedCard = null;
   }
   // tslint:disable-next-line:typedef
   cardUpdated(card: Card) {
@@ -67,5 +68,6 @@ export class CardsComponent implements OnInit {
     if (indx >= 0) {
       this.cards[indx] = card;
     }
+    this.editedCard = null;
   }
 }
