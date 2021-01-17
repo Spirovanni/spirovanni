@@ -12,7 +12,10 @@ import { Card } from '../../../@core/models/Card';
 export class CardsFormComponent implements OnInit {
 
   cardForm;
+  id = null;
   @Input() set card(val: Card) {
+    this.id = val.id;
+    console.log(this.id);
     this.cardForm = new FormGroup({
       title: new FormControl(val.title),
       description: new FormControl(val.description)
