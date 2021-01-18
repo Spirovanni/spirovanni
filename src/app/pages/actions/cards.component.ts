@@ -37,6 +37,10 @@ export class CardsComponent implements OnInit {
       );
     }
   }
+  logout() {
+    this.cookieService.delete('cr-token');
+    this.router.navigate(['/login']);
+  }
 
   selectCard(card: Card) {
     this.selectedCard = card;

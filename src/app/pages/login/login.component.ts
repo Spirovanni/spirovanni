@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl('')
   });
+  registerMode = false;
   constructor(
     private apiService: ApiService,
     private cookieService: CookieService,
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     const crToken = this.cookieService.get('cr-token');
     if (crToken) {
-      this.router.navigate(['/pages']);
+      this.router.navigate(['/pages/xcards']);
     }
   }
 
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.apiService.loginUser(this.authForm.value).subscribe(
       (result: TokenObj) => {
         this.cookieService.set('cr-token', result.token);
-        this.router.navigate(['/pages']);
+        this.router.navigate(['/pages/xcards']);
       },
         error => console.log(error)
     );

@@ -1,6 +1,6 @@
 <app-content-header
     [icon]="'playlist_add_check'"
-    [title]="'Actions-List'"
+    [title]="'Cards List'"
     [desc]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin ante lectus, id pretium mi dignissim non.'"
     [hideBreadcrumb]="false"
     [hasBgImage]="true"
@@ -22,5 +22,6 @@
   <app-card-form *ngIf="editedCard" [card]="this.editedCard"
                  (cardCreated)="cardCreated($event)" (cardUpdated)="cardUpdated($event)"></app-card-form>
   </div>
+  <button mat-raised-button color="primary" class="mat-elevation-z6 w-100 mt-3" type="submit" (click)="logout()">Logout</button>
 </div>
 

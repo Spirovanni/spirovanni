@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../@core/shared/shared.module';
+import { CookieService } from 'ngx-cookie-service';
+
 import { RegisterComponent } from './register.component';
 
 export const routes = [
@@ -19,6 +21,9 @@ export const routes = [
   ],
   declarations: [
     RegisterComponent
+  ],
+  providers: [
+    CookieService
   ]
 })
 export class RegisterModule { }

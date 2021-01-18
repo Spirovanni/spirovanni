@@ -8,7 +8,7 @@
                 [hasBgImage]="true"
                 [class]="'py-4'"></app-content-header>
             <div class="p-3">
-                <a mat-button routerLink="/register" color="accent" class="w-100">Don't have an account? Sign up now!</a>
+                <a mat-button routerLink="/register" color="accent" class="w-100" (click)="registerMode = true">Don't have an account? Sign up now!</a>
                 <mat-form-field class="w-100">
                     <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">mail</mat-icon>
                     <input matInput type="text" placeholder="Username" formControlName="username">
@@ -22,7 +22,10 @@
                     <mat-error *ngIf="form.controls.password.hasError('minlength')">Password isn't long enough, minimum of 6 characters</mat-error>
                 </mat-form-field>
 <!--                <mat-slide-toggle formControlName="rememberMe" class="my-2">Keep me signed in</mat-slide-toggle>-->
-                <button mat-raised-button color="primary" class="mat-elevation-z6 w-100 mt-3" type="submit">SIGN IN</button>
+                <button mat-raised-button color="primary" class="mat-elevation-z6 w-100 mt-3" type="submit">
+                  <span *ngIf="!registerMode">SIGN IN</span>
+                  <span *ngIf="registerMode">Register</span>
+                </button>
             </div>
         </form>
   </div>
