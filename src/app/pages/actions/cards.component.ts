@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../@core/services/api.service';
+import { Router } from '@angular/router';
 import { Card } from '../../@core/models/Card';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-actions',
@@ -14,41 +16,42 @@ export class CardsComponent implements OnInit {
   editedCard = null;
 
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private cookieService: CookieService,
+    private router: Router,
   ) {
   }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.apiService.getCards().subscribe(
-      (data: Card[]) => {
-        // @ts-ignore
-        this.cards = data;
-      },
-      error => console.log(error)
-    );
+    const crToken = this.cookieService.get('cr-token');
+    if (!crToken) {
+      this.router.navigate(['/login']);
+    } else {
+      this.apiService.getCards().subscribe(
+        (data: Card[]) => {
+          // @ts-ignore
+          this.cards = data;
+        },
+        error => console.log(error)
+      );
+    }
   }
 
-  // tslint:disable-next-line:typedef
   selectCard(card: Card) {
     this.selectedCard = card;
     this.editedCard = null;
     // console.log('selectedCard', this.selectedCard);
   }
 
-  // tslint:disable-next-line:typedef
   editCard(card: Card) {
     this.editedCard = card;
     this.selectedCard = null;
   }
-
-  // tslint:disable-next-line:typedef
   createNewCard() {
     this.editedCard = {title: '', description: ''};
     this.selectedCard = null;
   }
-
-  // tslint:disable-next-line:typedef
   deletedCard(card: Card) {
     this.apiService.deleteCard(card.id).subscribe(
       data => {
@@ -57,12 +60,12 @@ export class CardsComponent implements OnInit {
       error => console.log(error)
     );
   }
-  // tslint:disable-next-line:typedef
+
   cardCreated(card: Card) {
     this.cards.push(card);
     this.editedCard = null;
   }
-  // tslint:disable-next-line:typedef
+
   cardUpdated(card: Card) {
     const indx = this.cards.findIndex( car => car.id === card.id );
     if (indx >= 0) {
