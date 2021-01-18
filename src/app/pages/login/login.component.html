@@ -1,6 +1,6 @@
 <mat-sidenav-container class="h-100">
   <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
-       <form [formGroup]="authForm" (ngSubmit)="saveForm()" fxFlex="90" fxFlex.gt-sm="30" fxFlex.sm="60" class="mat-elevation-z6">
+       <form [formGroup]="authForm" (ngSubmit)="loginUser()" fxFlex="90" fxFlex.gt-sm="30" fxFlex.sm="60" class="mat-elevation-z6">
             <app-content-header
                 [icon]="'exit_to_app'"
                 [title]="'Login'"

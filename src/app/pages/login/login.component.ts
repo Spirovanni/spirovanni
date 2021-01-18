@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  saveForm() {
+  loginUser() {
     this.apiService.loginUser(this.authForm.value).subscribe(
       (result: TokenObj) => {
         this.cookieService.set('cr-token', result.token);
