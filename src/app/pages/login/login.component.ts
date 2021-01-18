@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { emailValidator } from '../../@theme/utils/app-validators';
@@ -14,7 +14,7 @@ interface TokenObj {
   selector: 'app-login',
   templateUrl: './login.component.html'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public form: FormGroup;
   public settings: Settings;
   authForm = new FormGroup({
@@ -24,9 +24,9 @@ export class LoginComponent {
   constructor(
     private apiService: ApiService,
     private cookieService: CookieService,
+    private router: Router,
     public appSettings: AppSettings,
-    public fb: FormBuilder,
-    public router: Router
+    public fb: FormBuilder
   ){
     this.settings = this.appSettings.settings;
     this.form = this.fb.group({
@@ -35,12 +35,18 @@ export class LoginComponent {
       rememberMe: false
     });
   }
+  ngOnInit() {
+    const crToken = this.cookieService.get('cr-token');
+    if (crToken) {
+      this.router.navigate(['/pages']);
+    }
+  }
 
   saveForm() {
     this.apiService.loginUser(this.authForm.value).subscribe(
       (result: TokenObj) => {
-        console.log(result);
         this.cookieService.set('cr-token', result.token);
+        this.router.navigate(['/pages']);
       },
         error => console.log(error)
     );
